@@ -17,35 +17,101 @@ Fast Fourier Transform (FFT) is used for speaker recognition and the result of e
 ### Limitations
 * Only the five speakers: Benjamin Netanyahu, Jens Stoltenberg, Julia Gillard, Margaret Thatcher, and Nelson Mandela
 * Only 30-second .wav format audio files are available 
+* Available emotions : Positive and Negative
 
 ### Problem 
 * The model for speaker recognition is trained with 1-second audio files and when it comes the different length of audio files, the model often fails to predict the correct speaker.
 * The sound of the audio files converted from video files is not equal. The results of FFT are not equal even though the speaker is the same. This leads the model to the wrong prediction. 
 
-### Dataset
+# 1. Model
+
+## Spekaer Recognition Model
+
+### 1. Question Definition
+
+Determine the five different speakers from a given audio file. 
+
+### 2. Data Collection
+
 * Kaggle - https://www.kaggle.com/kongaevans/speaker-recognition-dataset
 
 * Youtube
 
-![image](https://user-images.githubusercontent.com/42757351/129858450-b334f058-f995-40ac-871a-f4a712a38d49.png)
+<p align="center">
+  <img width="760" height="563" src="https://user-images.githubusercontent.com/42757351/129858450-b334f058-f995-40ac-871a-f4a712a38d49.png">
+</p>
 
-* audiocheck 
+* audiocheck (noise files)
 
-![image](https://user-images.githubusercontent.com/42757351/129858463-00d3080a-9e1c-41a0-91e7-d5eb4267ed24.png)
+<p align="center">
+  <img width="315" height="130" src="https://user-images.githubusercontent.com/42757351/129858463-00d3080a-9e1c-41a0-91e7-d5eb4267ed24.png">
+</p>
 
-# 1. Model
+### 3. Data PreProcessing
 
-* 
+Once the video files are collected, they are converted into .wav files by an video editor programme called Movavi.
+
+Then, split them into 1-second long files.
 
 * Number of audio files for each speaker 
- 
-![image](https://user-images.githubusercontent.com/42757351/129860909-4ab0773f-6248-46dd-a0cf-28fa57777c13.png)
+
+<p align="center">
+  <img width="500" height="520" src="https://user-images.githubusercontent.com/42757351/129861462-71e9d969-c175-48dd-b1b7-12b295296bf1.png">
+</p>
+
+### 4. Model Building
+
+After that, train the model.
+
+<p align="center">
+  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129880152-759f855f-2549-46e3-9d61-7f17b5dd4ff3.png">
+</p>
 
 
+<p align="center">
+  <img width="1241" height="437" src="https://user-images.githubusercontent.com/42757351/129860363-fa36c5dd-c65d-4e2e-9eb7-55a2361c3e76.png">
+</p>
 
-* Model accuracy with graph
+## Sentiment Analysis Model
 
-![image](https://user-images.githubusercontent.com/42757351/129860363-fa36c5dd-c65d-4e2e-9eb7-55a2361c3e76.png)
+### 1. Question Definition
+
+Identify the speaker's emotion based on their speech. 
+
+### 2. Data Collection
+
+* Large Movie Review Dataset - https://ai.stanford.edu/~amaas/data/sentiment/
+
+* The structue of dataset
+
+<p align="center">
+  <img width="673" height="456" src="![image](https://user-images.githubusercontent.com/42757351/129885881-5ffa79c7-f1a9-46ba-afee-fb4ee57ab113.png)">
+</p>
+
+### 3. Data PreProcessing
+
+Once the video files are collected, they are converted into .wav files by an video editor programme called Movavi.
+
+Then, split them into 1-second long files.
+
+* Number of audio files for each speaker 
+
+<p align="center">
+  <img width="500" height="520" src="https://user-images.githubusercontent.com/42757351/129861462-71e9d969-c175-48dd-b1b7-12b295296bf1.png">
+</p>
+
+### 4. Model Building
+
+After that, train the model.
+
+<p align="center">
+  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129880152-759f855f-2549-46e3-9d61-7f17b5dd4ff3.png">
+</p>
+
+
+<p align="center">
+  <img width="315" height="130" src="https://user-images.githubusercontent.com/42757351/129858463-00d3080a-9e1c-41a0-91e7-d5eb4267ed24.png">
+</p>
 
 
 
