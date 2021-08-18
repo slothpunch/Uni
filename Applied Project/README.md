@@ -85,34 +85,29 @@ Identify the speaker's emotion based on their speech.
 * The structue of dataset
 
 <p align="center">
-  <img width="673" height="456" src="![image](https://user-images.githubusercontent.com/42757351/129885881-5ffa79c7-f1a9-46ba-afee-fb4ee57ab113.png)">
+  <img width="673" height="456" src="https://user-images.githubusercontent.com/42757351/129885881-5ffa79c7-f1a9-46ba-afee-fb4ee57ab113.png">
 </p>
 
 ### 3. Data PreProcessing
 
-Once the video files are collected, they are converted into .wav files by an video editor programme called Movavi.
-
-Then, split them into 1-second long files.
-
-* Number of audio files for each speaker 
+Change <br /> to \n\n and remove whitespaces at the beginnig and end of the string. Then, find out their label 'pos' or 'neg'.
 
 <p align="center">
-  <img width="500" height="520" src="https://user-images.githubusercontent.com/42757351/129861462-71e9d969-c175-48dd-b1b7-12b295296bf1.png">
+  <img width="673" height="456" src="https://user-images.githubusercontent.com/42757351/129895971-0e9efbf6-5ef5-4933-ac47-0f7ae7cf2de1.png">
 </p>
+
 
 ### 4. Model Building
 
 After that, train the model.
 
 <p align="center">
-  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129880152-759f855f-2549-46e3-9d61-7f17b5dd4ff3.png">
+  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129899336-acb91592-12eb-44bb-a09d-8dfc88af1268.png">
 </p>
-
 
 <p align="center">
-  <img width="315" height="130" src="https://user-images.githubusercontent.com/42757351/129858463-00d3080a-9e1c-41a0-91e7-d5eb4267ed24.png">
+  <img width="1241" height="437" src="https://user-images.githubusercontent.com/42757351/129899345-5ef62253-4ed5-48d7-934d-1f6c51f8d09d.png">
 </p>
-
 
 
 # 2. Server 
