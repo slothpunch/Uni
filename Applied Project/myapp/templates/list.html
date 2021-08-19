@@ -1,0 +1,292 @@
+
+<html>
+<head>
+<title>Speaker recognition and mood analysis system</title>
+
+<!-- ------------------------------- [edit] -------------------------------- -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<!-- ----------------------------------------------------------------------- -->
+<!--<link rel="stylesheet" href="style.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css">
+<meta name="viewport" content="width =device-width, initial-scale=1">    
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Barlow+Condensed&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<!--favicon-->  
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon_io/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon_io/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon_io/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'favicon_io/site.webmanifest' %} ">    
+
+    
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>    
+    
+</head>
+<body>
+ <section id="banner">
+    
+     <img src="{% static 'img/logo.png' %}" class="logo">
+     <div class="banner-text">
+         <h1><br>Speaker recognition & mood analysis system</h1>
+         <p><br>Group 01 Project</p>
+         <div class="banner-btn">
+             <a href="#system"><span></span>Go to System</a>
+             <a href="#team"><span></span>About Us</a>
+         </div>
+          
+     </div>
+    </section>   
+    <div id="sideNav">
+    <nav>
+        <ul>
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#system">System</a></li>   
+            <li><a href="#team">About Us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+        </ul>
+        </nav>
+    </div>
+    <div id="menuBtn">
+    <img src="{% static 'img/menu.png' %}" id="menu">
+    </div>
+    
+    
+<!--feature-->   
+
+ <section id="feature">
+    <div class="title-text">
+      <p>Feature</p>  
+      <h1>System Features</h1>
+    </div> 
+   <div class="feature-box">
+      <div class="single-feature">
+       <img src="{% static 'img/Pic-1.png' %}">
+       <div class="overlay"></div>
+          <div class="feature-desc">
+          <h3>Speech Recognition</h3>
+          <hr>
+          <p>A technology that processes spoken voice into a textual format.
+          </p>
+          </div>
+       </div>
+      <div class="single-feature">
+       <img src="{% static 'img/Pic-2.png' %}">
+       <div class="overlay"></div>
+          <div class="feature-desc">
+          <h3>Speaker Recognition</h3>
+          <hr>
+          <p>Recognises a person automatically based on their specific speaking patterns, characteristics, or waves</p>
+          </div>
+       </div> 
+      <div class="single-feature">
+       <img src="{% static 'img/Pic-3.png' %}">
+       <div class="overlay"></div>
+          <div class="feature-desc">
+          <h3>Emotion Detection</h3>
+          <hr>
+          <p>Emotion detection from text is used to identify people’s sentiments from a written format.</p>
+          </div>
+       </div> 
+      <div class="single-feature">
+       <img src="{% static 'img/pic-4.png' %}">
+       <div class="overlay"></div>
+          <div class="feature-desc">
+          <h3>AWS and the following Python libraries is used</h3>
+          <hr>
+          </div>
+       </div> 
+   </div>
+</section>   
+    
+<!--feature-->   
+    
+    
+<!--System-->
+
+<section id="system">
+<div  class="title-text">
+</hr>
+    <!-- List of uploaded documents -->
+    {% if documents %}
+    <p>System</p>  
+    <div class="system-box">
+    <h1>Speaker recognition and mood analysis system</h1>
+</div>
+ 
+        <div class="systems">
+            <p>Trained System will conduct Speech recognition, speaker recognition, and emotion detection.</p>
+            <br><br>
+    
+            {% for document in documents %}
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+    <div class="drag-box">    
+        <div class="drag-area">
+        <div class="icon"><p class="fa fa-cloud-upload"></p></div>
+    <!-- Upload form. Note enctype attribute! -->
+    <form class="text-center" action="{% url 'my-view' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ message }}
+        <p>{{ form.non_field_errors }}
+        {{ form.docfile.label_tag }} {{ form.docfile.help_text }}</p>
+    </br> 
+    <div >
+        <p>
+    {{ form.docfile.errors }} {{ form.docfile }}
+   <p> <button type="submit" value="Upload">Upload </button> </p>  
+    
+    </br>
+    <div class="card text-center ">
+        <h5 class="card-header">Result</h5>
+        <div class="card-body row">
+            <p class="col-6 col-md-4">  </p>  
+            <p class="col-6 col-md-4"> 
+
+                <!-- {% if test.html %}
+                {% include "test.html" %}
+                {% else %}
+                <p> Not yet uploaded </p>
+                {% endif %} -->
+               
+                {% include "test.html" %}
+                              
+                
+                <p class="col-6 col-md-4"></p>
+
+
+  </div>
+</div>
+
+     
+    </p>
+    </div>
+    </div>
+
+    </form>
+</br>
+      <!--result-->
+
+
+
+
+<!--result-->  
+        
+    </section>
+<!--System-->
+
+    
+ 
+    
+<!--Team--> 
+    
+<section id="team">
+    
+<div class="title-text">
+    <p>Team</p>  
+    <h1>Group 01 : About Us</h1>
+    </div>
+    <div class="team-row">
+      <div class="team-col">
+          <div class="user">
+          <img src="{% static 'img/img-1.png' %}">
+              <div class="user-info">
+              <h4>Duyoung Jang <i class="fa fa-github"></i></h4>
+                  <small>s4627596</small>
+              </div>
+            </div>
+      <p>Duyoung is responsible for strategy, vision and growth of the company and has the ability to rise above the daily details and decide where the industry and business are headed. </p>  
+      </div>
+       <div class="team-col">
+          <div class="user">
+          <img src="{% static 'img/img-2.png' %}">
+              <div class="user-info">
+              <h4>Insub Kim <i class="fa fa-github"></i></h4>
+                  <small>s4627595</small>
+              </div>
+            </div>
+      <p>Insub is responsible for the development and architecture of Enterprise Web Applications and knows how collaboration and mutual inspiration 
+<br><br>- Choose right technologies and patterns 
+<br>- Makes software projects successful and solving  
+<br>- Building and designing performance-critical applications
+</p>  
+      </div> <div class="team-col">
+          <div class="user">
+          <img src="{% static 'img/img-3.png' %}">
+              <div class="user-info">
+              <h4>Sohwa Lee <i class="fa fa-github"></i></h4>
+                  <small>s4633065</small>
+              </div>
+            </div>
+      <p>Sohwa is responsible for business development and advising clients in the area of UI/UX Design.</p>  
+      </div>
+    </div>
+
+</section>    
+<!--Team-->    
+    
+<!--footer-->  
+
+<section id="footer">
+    <img src="{% static 'img/footer-img.png' %}" class="footer-img">
+    <div class="title-text">
+    <p>Contact</p>  
+    <h1>Contact Us</h1>
+    </div>
+    
+<div class="footer-row">
+<div class="footer-left">
+    <h1>Opening Hours</h1>
+    <p><i class="fa fa-clock-o"></i>Monday to Friday : 9am to 5pm</p>
+</div>    
+<div class="footer-right">
+<h1>Contact Details</h1>  
+    <p>E-mail: NEF3001_Project01_team01@gmail.com<i class="fa fa-envelope"></i></p>
+</div> 
+</div>  
+
+<div class="social-links">
+    <i class="fa fa-instagram"></i>
+    <p>Copyright © : Project Group 01</p>
+</div>   
+    
+</section>    
+    
+<!--footer-->  
+    
+    <script>
+    var menuBtn = document.getElementById("menuBtn")
+    var sideNav = document.getElementById("sideNav")
+    var menu = document.getElementById("menu")
+    
+    sideNav.style.right = "-250px";
+    
+    menuBtn.onclick = function(){
+        if(sideNav.style.right == "-250px"){
+            sideNav.style.right = "0";
+            menu.src="{% static 'img/close.png' %}";
+        }
+        else{
+            sideNav.style.right = "-250";
+            menu.src="{% static 'img/menu.png' %}";
+        }
+    }
+    
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000,
+	speedAsDuration: true
+});
+
+
+</script>
+    
+</body>
+</html>
+
+
