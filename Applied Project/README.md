@@ -64,7 +64,7 @@ Then, split them into 1-second long files.
 After that, train the model.
 
 <p align="center">
-  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129880152-759f855f-2549-46e3-9d61-7f17b5dd4ff3.png">
+  <img width="1600" height="410" src="https://user-images.githubusercontent.com/42757351/129880152-759f855f-2549-46e3-9d61-7f17b5dd4ff3.png">
 </p>
 
 
@@ -102,7 +102,7 @@ Change <br /> to \n\n and remove whitespaces at the beginnig and end of the stri
 After that, train the model.
 
 <p align="center">
-  <img width="1500" height="510" src="https://user-images.githubusercontent.com/42757351/129899336-acb91592-12eb-44bb-a09d-8dfc88af1268.png">
+  <img width="1600" height="410" src="https://user-images.githubusercontent.com/42757351/129899336-acb91592-12eb-44bb-a09d-8dfc88af1268.png">
 </p>
 
 <p align="center">
@@ -112,14 +112,38 @@ After that, train the model.
 
 # 2. Server 
 
+We built a modern infrastructure with a public cloud (AWS) providing cloud computing service with high flexibility, scalability, security, reliability, and a reasonable price with the on-demand system (pay-as-you-go). We also used Infrastructure as Code (IaC) which is reusable and readable in the ways of the process of configuring, managing, and provisioning computer servers via scripts or codes rather than physical hardware configuration tools, normally managed by physical equipment, such as bare-metal servers and virtual machines that take more efforts and time. We implemented Terraform for IaC which allows infrastructure to be written as code, reading configuration files, and serving an execution plan of changes. We used Terraform to create three configurable general AWS virtual private computer which can be configured to support three availability zones so that it highly increases reliability, availability, and fault tolerance up to 99.999999999%, including each three separate public and private subnets.
+
+<p align="center">
+  <img width="1241" height="437" src="https://user-images.githubusercontent.com/42757351/130065109-5618658e-a1bf-4aa2-aceb-5fbe95b21f42.png">
+</p>
+
 # 3. Web
+
+We built a single-page website or one-page website which is simply the same as a landing page. The website that only contains one HTML page instead of having additional pages. The intention of adopting the single-page website for the project is for securing numerous beneficial features below:
+
+*	Delivering Key Messages Effectively
+*	Improve user engagement
+*	Simplicity makes for easy navigation
+*	Strong design delivered quickly
+*	Ideal for mobiles
+
+<p align="center">
+  <img width="1241" height="437" src="https://user-images.githubusercontent.com/42757351/130065478-af808283-6a28-4f25-a5a0-b4328225a086.png">
+</p>
 
 # 4. Result
 
+<p align="center">
+  <img width="1171" height="650" src="https://user-images.githubusercontent.com/42757351/130066227-0c4b7a20-8d8b-4584-9af7-b7c61d12e024.png">
+</p>
+
+
 # 5. Timeline with Gantt chart 
 
-
-
+<p align="center">
+  <img width="1171" height="650" src="https://user-images.githubusercontent.com/42757351/130066592-ffed621e-78a1-4387-9535-d54419c43d34.png">
+</p>
 
 
 
