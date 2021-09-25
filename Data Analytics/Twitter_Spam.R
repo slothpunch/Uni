@@ -37,15 +37,12 @@ var(twitter.spam.nonspammer)  # 305372.4
 sd(twitter.spam.nonspammer)   # 552.6051
 
 
-# 4. Compute the numeric summary of the 'no_tweets' column
+# Compute the numeric summary of the 'no_tweets' column
 twitter.spam.notweets <- with(twitter.spam, no_tweets)
 summary(twitter.spam.notweets)
 quantile(twitter.spam.notweets)
 
-# 5. Plot the histogram to show the distribution of tweets number (column: no_tweets).
-#    In the generated plot, the plot name is "histogram of Posted Tweets", Y-axis is frequency,
-#    and X-axis is Tweets number.
-
+# Plot the histogram to show the distribution of tweets number (column: no_tweets).
 hist(twitter.spam.notweets, 
      main = "Histogram of Posted Tweets", 
      xlab = "Tweets number", 
